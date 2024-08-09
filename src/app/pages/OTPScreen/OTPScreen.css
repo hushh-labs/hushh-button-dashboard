@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+/* OTPScreen.css */
+/* OTPScreen.css */
+
+.otp-screen {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .otp-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 0 20px; /* Add some padding to the container */
+  }
+  
+  .otp-container h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .otp-inputs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .otp-inputs input {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #66666680; /* 50% opacity */
+    border-radius: 8px;
+  }
+  
+  .otp-button {
+    width: 220px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .otp-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .otp-footer p {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #666666;
+  }
+  
+  .otp-footer a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+  }
+  
+  .otp-right-pane {
+    width: 50%; /* Adjust width as needed */
+    background-color: #e0e0e0;
+    height: 100vh;
+  }
+  
