@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.NavigationBar__mainContainer{
+    width: 248px;
+    height: 1024px;
+    border-right: 1px solid #F9F9F9;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+}
+
+.NavigationBar__mainContainer span{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.NavigationBar__mainContainer span image{
+    height: 20px;
+    width: 20px;
+}
+
+.NavigationBar__mainContainer p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #727272;
+    size: 14px;
+    line-height: 21px;
+    width: 100px;
+}
+
+.NavigationBar__spacingContainer{
+    height: 72px;
+    width: 248px;
+    border-bottom: 1px solid #E4E4E4;
+    margin-bottom: 30px;
+}
+
+.NavigationBar__lineContainer{
+    height: 2px;
+    width: 248px;
+    border-bottom: 1px solid #E4E4E4 ;
+    margin-top: 5px;
+}
+
+.NavigationBar__secondContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.NavigationBar__title{
+    margin-right: 35px;
+}
+
+.NavigationBar__bottomCaontainer{
+    height: 72px;
+    width: 248px;
+    border: 1px solid #E4E4E4;
+    margin-top: 208px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.NavigationBar__bottomCaontainer p{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    width: 100%;
+}
+

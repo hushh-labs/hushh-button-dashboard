@@ -1,0 +1,47 @@
+.User__mainContainer {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .User__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .User__table th,
+  .User__table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .User__table th {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .User__info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .User__img {
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .User__actionLink {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .User__actionLink:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+
+.DashboardHeader__mainContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .DashboardHeader__firstContainer p {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: bold;
+    font-size: 24px;
+    color: black;
+  }
+  
+  .DashboardHeader__secondContainer {
+    display: flex;
+    gap: 20px;
+  }
+  .DashboardHeader__links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .DashboardHeader__links span {
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .DashboardHeader__thirdContainer {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .DashboardHeader__sortButton,
+  .DashboardHeader__filterButton,
+  .DashboardHeader__addButton {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .DashboardHeader__addButton {
+    background-color: black;
+    color: white;
+  }
+  

@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+.searchQuery__mainContainer {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.searchQuery__header {
+  margin-bottom: 20px;
+}
+
+.searchQuery__header h2 {
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.searchQuery__tags {
+  display: flex;
+  gap: 10px;
+}
+
+.tag {
+  padding: 5px 15px;
+height: 74px;
+width: 165px;
+  border: 1px solid #dbe0e5;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.tag__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  gap: 20px;
+}
+
+.searchQuery__body {
+  margin-top: 20px;
+}
+
+.searchQuery__body h3{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 32px;
+}
+
+.searchQuery__sections {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchQuery__section {
+  width: 48%;
+}
+
+.searchQuery__section h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.queryItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.queryItem img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.queryDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.queryDetails span:first-child {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: bold;
+    font-size: 16px;
+}
+
+.queryDetails span:last-child {
+  font-size: 14px;
+  color: #555;
+}
+
+.searchQuery__list h4{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 18px;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.searchQuery__lists{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 100px;
+    
+}

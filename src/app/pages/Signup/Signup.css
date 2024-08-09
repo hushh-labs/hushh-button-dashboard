@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap");
+
+.Signup__header {
+  height: 73px;
+  width: 100%;
+  border: 1px solid #d1dee5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Signup__headerRight {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: grey;
+  margin-left: 10px;
+}
+
+.Signup__headerLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+.Signup__headerLeft button {
+  height: 40px;
+  width: 98px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.Signup__headerLeft p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.Signup__content {
+  display: flex;
+}
+
+.Signup__leftContainer {
+  display: flex;
+  flex: 1;
+  height: 957px;
+  width: 649px;
+}
+.Signup__rightContainer {
+  display: flex;
+  flex: 1;
+  height: 957px;
+  width: 649px;
+
+}
+
+.Signup__leftContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Signup__leftContainer h4 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 48px;
+  height: 230px;
+  width: 430px;
+  text-align: center;
+}
+
+.Signup__leftContainer__p {
+  width: 430px;
+  text-align: center;
+}
+
+.Signup__leftContainer__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.Signup__leftContainer__button span {
+  height: 56px;
+  width: 460px;
+  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Signup__leftContainer__button span img {
+  height: 24px;
+  width: 24px;
+}
+
+.Signup__leftContainer__button span p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 18px;
+  color: black;
+  width: 200px;
+}
+
+.Signup__leftContainer__splitDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 460px;
+  margin-top: 50px;
+  gap: 10px;
+}
+.Signup__leftContainer__splitDiv__inner {
+  border-bottom: 1px solid rgba(102, 102, 102, 0.25);
+  width: 230px;
+  height: 2px;
+}
+
+.Signup__leftContainer__bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.Signup__leftContainer__bottom span {
+  height: 56px;
+  width: 460px;
+  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: black;
+}
+
+.Signup__leftContainer__bottom span p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  width: 200px;
+}
+
+.Signup__leftContainer__bottom_P{
+    width: 424px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 14px;
+    color: black;
+    margin-top: 15px;
+}
+
+.Signup__rightContainer{
+    background-color: #D9D9D9;
+}

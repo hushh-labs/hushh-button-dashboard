@@ -1,0 +1,29 @@
+/* home.css */
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.nav {
+    width: 250px; /* Adjust width as needed */
+    background-color: #f0f0f0; /* Optional: Add background color */
+}
+
+.main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 72px; /* Keep this consistent with the header component's height */
+    border-bottom: 1px solid black; /* Optional: Add border to separate header */
+    width: 100%;
+}
+
+.content {
+    flex-grow: 1;
+ 
+
+}
