@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.EmailSignUp__contentContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+  }
+  
+  .EmailSignUp__leftContainer {
+    flex: 1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .EmailSignUp__leftContainer h4 {
+    font-weight: 500;
+    font-size: 48px;
+    margin-bottom: 20px; /* Add some space below the heading */
+  }
+  
+  .EmailSignUp__rightContainer {
+    flex: 1;
+    width: 660px;
+    height: 100vh;
+    background-color: #D9D9D9;
+    
+  }
+  
+  .EmailSignUp__leftContainer span {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    width: 500px; /* Set a width to match the input */
+    margin-bottom: 20px; /* Add some space below the input */
+  }
+  
+  .EmailSignUp__leftContainer label {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 8px; /* Add space between the label and input */
+  }
+  
+  .EmailSignUp__leftContainer input {
+    width: 100%; /* Make the input take the full width of the container */
+    height: 40px;
+    border: 1px solid black;
+    padding: 8px; /* Add some padding for a better look */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    border-radius: 4px; /* Optional: add some border-radius */
+  }
+  

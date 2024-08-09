@@ -3,7 +3,7 @@
 
 .Signup__header {
   height: 73px;
-  width: 100%;
+  width: 100vw;
   border: 1px solid #d1dee5;
   display: flex;
   flex-direction: row;

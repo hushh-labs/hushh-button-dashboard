@@ -36,7 +36,7 @@ export default function Home() {
       )}
       {!userExists && (
         <div className='content'>
-          <Pages.Signup />
+          <Pages.EmailSignUp />
         </div>
       )}
     </div>
