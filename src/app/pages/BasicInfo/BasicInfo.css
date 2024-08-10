@@ -1,0 +1,167 @@
+/* Existing CSS */
+.BasicInfo__header {
+    height: 73px;
+    width: 100vw;
+    border: 1px solid #d1dee5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.BasicInfo__headerRight {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: grey;
+    margin-left: 10px;
+}
+
+.Info__carousel {
+    position: relative;
+    display: flex;
+    flex-direction: row !important;
+    margin-top: 50px;
+    margin-left: 120px;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    background-color: gray;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+.info__circle > p {
+    font-size: 17px;
+    color: gray;
+}
+
+.basicinfo__title {
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+.largeCircle {
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.basicinfo__title > h1 {
+    font-size: 30px;
+    margin-left: 15px;
+}
+
+.info__para {
+    margin-top: 35px;
+    margin-left: 120px;
+    font-size: larger;
+    color: gray;
+    width: 500px;
+    height: 50px;
+}
+
+.info__mandatory {
+    margin-top: 75px;
+    margin-left: 120px;
+    color: black;
+    font-size: 18px;
+}
+
+/* New CSS for the form */
+.form__container {
+    margin-left: 120px;
+    margin-top: 25px;
+    width: 500px;
+}
+
+.form__group {
+    margin-bottom: 20px;
+}
+
+.form__group label {
+    display: block;
+    margin-bottom: 5px;
+    color: gray;
+}
+
+.form__input {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.gender__options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.gender__options label {
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: larger;
+}
+
+.gender__options input {
+    margin-right: 5px;
+}
+
+.date__group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 12px; /* Add gap for spacing between select boxes */
+}
+
+.date__item {
+    display: flex;
+    flex-direction: column;
+    width: 31%; /* Keep the width for each item */
+}
+
+.date__item label {
+    margin-bottom: 5px; /* Space between label and select */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.date__item select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px; /* Match the border-radius with the input fields */
+    width: 100%;
+    height: 60px; /* Increase the height to match the input fields */
+    box-sizing: border-box; /* Ensure padding is included in the height calculation */
+}
+
+.submit__button {
+    width: 100%;
+    padding: 15px;
+    background-color: grey;
+    color: white;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+}
