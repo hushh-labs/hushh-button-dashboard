@@ -1,0 +1,132 @@
+/* General styling for the DataPoints page */
+.datapoints {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+.datapoints__header {
+    position: relative;
+    left: 245px;
+}
+
+.datapoints__nav{
+    position: absolute;
+    height: 100vh;
+    width: 250px;
+    top: 0;
+}
+
+.datapoints__content {
+    position: relative;
+    padding: 20px;
+    max-width: 1500px;
+    margin: 0px 50px;
+    left: 250px;
+}
+
+.datapoints__title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.datapoints__title h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.search__bar input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 1000px;
+}
+
+/* Upload Section */
+.upload__section {
+    margin-bottom: 40px;
+}
+
+.upload__section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.upload__section .description {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Style for the label that wraps the button and input */
+.upload__button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: 1px solid #3d3d3d;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 500px; /* Ensures the label is the full width */
+    display: inline-block;
+    text-align: center; /* Centers the text inside the button */
+}
+
+.upload__button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.upload__button input {
+    display: none; /* Hides the file input */
+}
+
+/* Suggested Data Points */
+.suggested__dataPoints h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.dataPoints__grid {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+    width: 1200px;
+}
+
+.dataPoint__card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    width: 200px;
+}
+
+.dataPoint__card h4 {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    text-align: left;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.dataPoint__icon {
+    height: 50px;
+    width: 50px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.dataPoint__description {
+    color: #60a9c1;
+    font-size: 0.9rem;
+    text-align: left;
+
+}
