@@ -1,11 +1,15 @@
 import React from "react";
 import "./NavigationBar.css";
 import Images from "@/app/Exports/Images";
+import { useRouter } from "next/navigation";
 function NavigationBar() {
+  const router = useRouter();
   return (
     <div className="NavigationBar__mainContainer">
       <div className="NavigationBar__spacingContainer"></div>
-      <span>
+      <span onClick={() =>{
+        router.push("/pages/Dashboard")
+      }}>
         <img src={Images.dashboardIcon.src} /> <p> Dashboard</p>{" "}
       </span>
       <span>
@@ -14,14 +18,20 @@ function NavigationBar() {
       <span>
         <img src={Images.notesIcon.src} /> <p> Notes</p>{" "}
       </span>
-      <span>
+      <span onClick={() =>{
+        router.push("/pages/DataPoints")
+      }}>
         <img src={Images.dataPointIcon.src} /> <p> Data Points</p>{" "}
       </span>
       <span>
         <img src={Images.emailIcon.src} /> <p> Emails</p>{" "}
       </span>
-      <span>
-        <img src={Images.calenderIcon.src} /> <p> Calenders</p>{" "}
+      <span onClick={() => {
+        console.log("Button Clicked");
+        
+router.push("/pages/RewardsPage")
+      }}>
+        <img src={Images.calenderIcon.src} /> <p> Rewards</p>{" "}
       </span>
       <div className="NavigationBar__lineContainer"></div>
 

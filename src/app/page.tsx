@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import NavigationBar from "./components/NavigationBar/NavigationBar";
-import HeaderBar from "./components/HeaderBar/HeaderBar";
 import './home.css'; // Assume you have a CSS file for styling
 import Pages from "./Exports/Pages";
 
@@ -17,28 +15,14 @@ export default function Home() {
     }
   }, []);
 
+  // Show the content based on user existence
   return (
-    <div className={`container ${userExists ? '' : 'center-content'}`}>
-      {userExists && (
-        <>
-          <div className='nav'>
-            <NavigationBar />
-          </div>
-          <div className='main'>
-            <div className='header'>
-              <HeaderBar />
-            </div>
-            <div className='content'>
-              <Pages.Dashboard />
-            </div>
-          </div>
-        </>
-      )}
-      {!userExists && (
+    <div className='container'>
+      <div className='main'>
         <div className='content'>
-          <Pages.Signup />
+          {userExists ? <Pages.DataPoints /> : <Pages.Signup />}
         </div>
-      )}
+      </div>
     </div>
   );
 }

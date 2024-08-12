@@ -1,8 +1,11 @@
+"use client"
+
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import "./BasicInfo.css";
-
+import { useRouter } from "next/navigation";
 const BasicInfo: React.FC = () => {
     // State for form fields
+    const router = useRouter();
     const [firstName, setFirstName] = useState<string>("");
     const [middleName, setMiddleName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
@@ -169,7 +172,9 @@ const BasicInfo: React.FC = () => {
                     </div>
                 </div>
                 <div className="form__group">
-                    <button className="submit__button" type="submit">Next</button>
+                    <button className="submit__button" type="submit" onClick={() =>{
+router.push("/pages/BrandInfo")
+                    }}>Next</button>
                 </div>
             </form>
         </div>

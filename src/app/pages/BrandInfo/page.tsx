@@ -1,13 +1,15 @@
+"use client"
+
 import React, { useState } from "react";
 import "./BrandInfo.css";
-
+import { useRouter } from "next/navigation";
 const BrandInfo: React.FC = () => {
     // State for form fields
     const [brandName, setBrandName] = useState<string>("");
     const [brandWebsite, setBrandWebsite] = useState<string>("");
     const [category, setCategory] = useState<string>("");
     const [members, setMembers] = useState<string>("");
-
+const router = useRouter();
     // Handle form submission
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault(); // Prevent page reload
@@ -23,9 +25,7 @@ const BrandInfo: React.FC = () => {
 
     return (
         <div>
-            <div className="BrandInfo__header">
-                <div className="BrandInfo__headerRight"></div>
-            </div>
+            
 
             <div className="Info__carousel">
                 <div className="info__circle">
@@ -101,7 +101,9 @@ const BrandInfo: React.FC = () => {
                     </select>
                 </div>
                 <div className="form__group">
-                    <button className="submit__button" type="submit">Next</button>
+                    <button className="submit__button" type="submit" onClick={()=>{
+                        router.push("/pages/DataPoints")
+                    }}>Next</button>
                 </div>
             </form>
         </div>

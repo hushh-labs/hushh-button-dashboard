@@ -1,11 +1,11 @@
-import RewardsPage from "../pages/RewardsPage/RewardsPage";
-import Dashboard from "../pages/Dashboard/Dashboard";
+import RewardsPage from "../pages/RewardsPage/page";
+import Dashboard from "../pages/Dashboard/page";
 import Signup from "../pages/Signup/Signup";
 import EmailSignUp from "../pages/EmailSignUp/page";
 import OTPScreen from "../pages/OTPScreen/page";
-import BasicInfo from "../pages/BasicInfo/BasicInfo";
-import BrandInfo from "../pages/BrandInfo/BrandInfo";
-import DataPoints from "../pages/DataPoints/DataPoints";
+import BasicInfo from "../pages/BasicInfo/page";
+import BrandInfo from "../pages/BrandInfo/page";
+import DataPoints from "../pages/DataPoints/page";
 const Pages = {
     RewardsPage,
     Dashboard,

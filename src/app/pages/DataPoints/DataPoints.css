@@ -3,6 +3,9 @@
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow-y: auto;
+    width: 100vw;
 }
 
 .datapoints__header {
@@ -10,7 +13,7 @@
     left: 245px;
 }
 
-.datapoints__nav{
+.datapoints__nav {
     position: absolute;
     height: 100vh;
     width: 250px;
@@ -21,8 +24,7 @@
     position: relative;
     padding: 20px;
     max-width: 1500px;
-    margin: 0px 50px;
-    left: 250px;
+    margin-left: 270px; /* Adjusted to account for the navigation bar width */
 }
 
 .datapoints__title {
@@ -69,9 +71,9 @@
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    width: 500px; /* Ensures the label is the full width */
+    width: 500px;
     display: inline-block;
-    text-align: center; /* Centers the text inside the button */
+    text-align: center;
 }
 
 .upload__button:hover {
@@ -80,7 +82,7 @@
 }
 
 .upload__button input {
-    display: none; /* Hides the file input */
+    display: none;
 }
 
 /* Suggested Data Points */
@@ -92,7 +94,7 @@
 
 .dataPoints__grid {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     width: 1200px;
 }
@@ -116,17 +118,16 @@
     font-size: 15px;
 }
 
-.dataPoint__icon {
-    height: 50px;
-    width: 50px;
-    background-color: #e0e0e0;
-    border-radius: 50%;
-    margin: 0 auto 10px;
-}
-
 .dataPoint__description {
     color: #60a9c1;
     font-size: 0.9rem;
     text-align: left;
+}
 
+.DataPoints__upload{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
 }

@@ -1,45 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+.Dashboard__container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
 
-.Dashboard__mainContainer {
-    
-  }
-  
-  .Dashboard__firstContainer {
-    margin-top: 20px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .Dashboard__userCategory {
-    display: flex;
-    gap: 20px;
-    padding: 30px;
-  }
-  
-  .Dashboard__userCategoryItem {
-    cursor: pointer;
-    padding-bottom: 10px;
-    font-size: 16px;
-    position: relative;
-    color: #666;
-  }
-  
-  .Dashboard__userCategoryItem.active {
-    color: black;
-    font-weight: bold;
-  }
-  
-  .Dashboard__userCategoryItem.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: black;
-  }
-  
+.Dashboard__nav {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
-  .Dashboard__userTable{
-    margin-top: 20px;
-  }
+.Dashboard__content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Added to allow absolute positioning of the button */
+}
+
+.Dashboard__header {
+  width: 100%;
+}
+
+.Dashboard__mainContent {
+  padding: 20px;
+  flex: 1; /* Make the main content area fill the available space */
+}
+
+.Dashboard__firstContainer {
+  margin-top: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.Dashboard__userCategory {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+}
+
+.Dashboard__userCategoryItem {
+  cursor: pointer;
+  padding-bottom: 10px;
+  font-size: 16px;
+  position: relative;
+  color: #666;
+}
+
+.Dashboard__userCategoryItem.active {
+  color: black;
+  font-weight: bold;
+}
+
+.Dashboard__userCategoryItem.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.Dashboard__userTable {
+  margin-top: 20px;
+}
+
+/* Styling for the Toggle Button */
+.Dashboard__toggleButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.Dashboard__toggleButton:hover {
+  background-color: #0056b3;
+}

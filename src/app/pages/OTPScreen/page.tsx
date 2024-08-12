@@ -4,6 +4,7 @@ import React from "react";
 import "./OTPScreen.css";
 import { useRouter } from "next/navigation";
 import '../Signup/Signup.css'
+import { log } from "console";
 function OTPScreen() {
   const router = useRouter();
   return (
@@ -25,7 +26,11 @@ function OTPScreen() {
             <input type="text" maxLength="1" />
             <input type="text" maxLength="1" />
           </div>
-          <button className="otp-button">Proceed</button>
+          <button className="otp-button" onClick={() =>{
+            console.log("Button clicked");
+            
+            router.push("/pages/BasicInfo")
+          }}>Proceed</button>
           <div className="otp-footer">
             <p>Resend OTP in 30 sec</p>
             <p>
