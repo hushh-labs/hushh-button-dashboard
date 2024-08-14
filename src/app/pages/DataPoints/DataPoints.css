@@ -1,10 +1,11 @@
+
 /* General styling for the DataPoints page */
 .datapoints {
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
-    height: 100vh;
-    overflow-y: auto;
+   
+  
     width: 100vw;
 }
 
@@ -22,7 +23,7 @@
 
 .datapoints__content {
     position: relative;
-    padding: 20px;
+  
     max-width: 1500px;
     margin-left: 270px; /* Adjusted to account for the navigation bar width */
 }
@@ -85,6 +86,11 @@
     display: none;
 }
 
+.suggested__dataPoints{
+    height: 105vh;
+    overflow-y: scroll;
+}
+
 /* Suggested Data Points */
 .suggested__dataPoints h2 {
     font-size: 1.5rem;
@@ -108,6 +114,10 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     height: 300px;
     width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .dataPoint__card h4 {
@@ -121,8 +131,20 @@
 .dataPoint__description {
     color: #60a9c1;
     font-size: 0.9rem;
-    text-align: left;
+    text-align: center;
 }
+
+.dataPoint__card button {
+height: 50px;
+width: 150px;
+border: 1px solid black;
+border-radius: 10px;
+}
+
+.dataPoint__card button:hover{
+    background-color: black;
+    color: white;
+}  
 
 .DataPoints__upload{
     display: flex;

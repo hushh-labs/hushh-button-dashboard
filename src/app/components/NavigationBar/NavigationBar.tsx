@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import "./NavigationBar.css";
 import Images from "@/app/Exports/Images";

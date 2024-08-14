@@ -1,13 +1,20 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import "./EmailSignUp.css";
 import '../Signup/Signup.css'
 import { useRouter } from "next/navigation";
+import Services from "@/app/Exports/Services";
 function EmailSignUp() {
   const router = useRouter();
-  const handleEmailClick =()=>{
-router.push('/pages/OTPScreen')
-  }
+  const [email, setEmail] = useState("");
+  const handleEmailClick = async () => {
+    localStorage.setItem("email", email);
+    const response = await Services.sendOTP(email);
+    if (response == 1) {
+      router.push('/pages/OTPScreen');
+    }
+  };
+  
   return (
     <div className="EmailSignUp__mainContainer">
       <div className="Signup__header">
@@ -25,7 +32,9 @@ router.push('/pages/OTPScreen')
               {" "}
               <p>Email</p>{" "}
             </label>
-            <input type="text" />
+            <input type="text" onChange={(e) =>{
+              setEmail(e.target.value)
+            }} />
           </span>
 
           <div className="EmailSignUp__contentContainer__button" onClick={handleEmailClick}>

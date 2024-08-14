@@ -1,15 +1,40 @@
-
-"use client"
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import "./OTPScreen.css";
 import { useRouter } from "next/navigation";
-import '../Signup/Signup.css'
-import { log } from "console";
+import "../Signup/Signup.css";
+import Services from "@/app/Exports/Services";
+
 function OTPScreen() {
   const router = useRouter();
+
+  const [otp, setOtp] = useState(["", "", "", "", "" , ""]); // Array to store each OTP digit
+
+  const handleOtpChange = (e, index) => {
+    const newOtp = [...otp];
+    newOtp[index] = e.target.value;
+    setOtp(newOtp);
+  };
+
+  const handleProceedClick = async () => {
+    let email = localStorage.getItem("email");
+    const otpString = otp.join("").trim(); // Trim any whitespace
+  
+    console.log("Entered OTP:", otpString);
+  
+    const response = await Services.verifyOTP('sanipatel.off@gmail.com', otpString);
+    if (response == 1) {
+      router.push("/pages/PasswordScreen");
+    } else if (response == -1) {
+      console.log("Incorrect OTP");
+    } else {
+      console.log("Something went wrong!!");
+    }
+  };
+  
+
   return (
     <>
-     
       <div className="Signup__header">
         <div className="Signup__headerRight"></div>
         <div className="Signup__headerLeft">
@@ -21,16 +46,19 @@ function OTPScreen() {
         <div className="otp-container">
           <h1>Enter OTP</h1>
           <div className="otp-inputs">
-            <input type="text" maxLength="1" />
-            <input type="text" maxLength="1" />
-            <input type="text" maxLength="1" />
-            <input type="text" maxLength="1" />
+            {otp.map((digit, index) => (
+              <input
+                key={index}
+                type="text"
+                maxLength="1"
+                value={digit}
+                onChange={(e) => handleOtpChange(e, index)}
+              />
+            ))}
           </div>
-          <button className="otp-button" onClick={() =>{
-            console.log("Button clicked");
-            
-            router.push("/pages/BasicInfo")
-          }}>Proceed</button>
+          <button className="otp-button" onClick={handleProceedClick}>
+            Proceed
+          </button>
           <div className="otp-footer">
             <p>Resend OTP in 30 sec</p>
             <p>

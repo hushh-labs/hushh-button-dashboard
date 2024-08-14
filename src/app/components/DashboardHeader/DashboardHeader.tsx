@@ -1,7 +1,12 @@
 import React from "react";
 import "./DashboardHeader.css";
 import Images from "@/app/Exports/Images";
-function DashboardHeader() {
+
+interface DashboardHeaderProps {
+  onHeaderClick: (view: string) => void;
+}
+
+function DashboardHeader({ onHeaderClick }: DashboardHeaderProps) {
   return (
     <div className="DashboardHeader__mainContainer">
       {/* First Section - Dashboard Text */}
@@ -12,9 +17,15 @@ function DashboardHeader() {
       {/* Second Section - Navigation Links */}
       <div className="DashboardHeader__secondContainer">
         <div className="DashboardHeader__links">
-          <span> <img src={Images.dataMappingIcon.src}/> Data mapping</span>
-          <span> <img src={Images.userDataIcon.src}/> User Data</span>
-          <span> <img src={Images.searchUserData.src}/> Search Data</span>
+          <span onClick={() => onHeaderClick("DataMapping")}>
+            <img src={Images.dataMappingIcon.src} /> Data mapping
+          </span>
+          <span onClick={() => onHeaderClick("UserData")}>
+            <img src={Images.userDataIcon.src} /> User Data
+          </span>
+          <span onClick={() => onHeaderClick("SearchData")}>
+            <img src={Images.searchUserData.src} /> Search Data
+          </span>
         </div>
       </div>
 

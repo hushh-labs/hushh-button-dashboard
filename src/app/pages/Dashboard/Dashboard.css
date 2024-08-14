@@ -17,7 +17,7 @@
   width: calc(100% - 250px);
   display: flex;
   flex-direction: column;
-  position: relative; /* Added to allow absolute positioning of the button */
+  
 }
 
 .Dashboard__header {

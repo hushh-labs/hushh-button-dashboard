@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import "./Dashboard.css";
@@ -16,6 +16,10 @@ function Dashboard() {
     setShowSearchQuery(!showSearchQuery);
   };
 
+  const handleHeaderClick = (view: string) => {
+    setShowSearchQuery(view === "SearchData");
+  };
+
   return (
     <div className="Dashboard__container">
       <div className="Dashboard__nav">
@@ -26,27 +30,9 @@ function Dashboard() {
           <HeaderBar />
         </div>
         <div className="Dashboard__mainContent">
-          <DashboardHeader />
+          <DashboardHeader onHeaderClick={handleHeaderClick} />
 
-          {/* User Category Navigation Bar */}
-          {!showSearchQuery && (
-            <div className="Dashboard__firstContainer">
-            <div className="Dashboard__userCategory">
-              <span className="Dashboard__userCategoryItem active">All Users</span>
-              <span className="Dashboard__userCategoryItem">Anonymous</span>
-              <span className="Dashboard__userCategoryItem">Logged in</span>
-              <span className="Dashboard__userCategoryItem">Email only</span>
-              <span className="Dashboard__userCategoryItem">Phone only</span>
-            </div>
-          </div>
-          ) }    
-
-          {/* Toggle Button */}
-          <button onClick={handleToggle} className="Dashboard__toggleButton">
-            {showSearchQuery ? "Show User Table" : "Show Search Query"}
-          </button>
-
-          {/* Conditional Rendering */}
+        
           {!showSearchQuery && (
             <div className="Dashboard__userTable">
               <User />

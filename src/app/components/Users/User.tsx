@@ -1,14 +1,55 @@
-import React from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 import './User.css';
+import qs from 'qs';
 
 function User() {
-  const users = [
-    { id: 1, name: 'John Doe', firstSeen: '12/12/2021', lastSeen: '12/12/2021', profileImg: 'https://via.placeholder.com/40' },
-    { id: 2, name: 'Jane Smith', firstSeen: '12/11/2021', lastSeen: '12/11/2021', profileImg: 'https://via.placeholder.com/40' },
-    { id: 3, name: 'Sam Johnson', firstSeen: '12/10/2021', lastSeen: '12/10/2021', profileImg: 'https://via.placeholder.com/40' },
-    { id: 4, name: 'Linda Davis', firstSeen: '12/09/2021', lastSeen: '12/09/2021', profileImg: 'https://via.placeholder.com/40' },
-    { id: 5, name: 'Chris Brown', firstSeen: '12/08/2021', lastSeen: '12/08/2021', profileImg: 'https://via.placeholder.com/40' },
-  ];
+  const [users, setUsers] = useState<{ id: number; name: string; firstSeen: string; lastSeen: string; profileImg: string }[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchUsers = async () => {
+    try {
+      const brandID = '4ff7f31c-6b9d-494a-9dec-9e211a7b23b4'; // Replace with actual brand ID or get it from props/state
+      const formData = qs.stringify({ brandID: brandID });
+
+      const response = await fetch('https://hushhdevenv.hushh.ai/button-Admin/v1/admin/get-users-of-shared-brand', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Map API response to the format required by the component
+        const fetchedUsers = result.data.map((user: any, index: number) => ({
+          id: index + 1, // Assuming id is auto-generated based on index
+          name: user.from_user_name,
+          profileImg: user.from_user_avatar,
+          firstSeen: 'N/A', // Replace with actual data if available
+          lastSeen: 'N/A', // Replace with actual data if available
+        }));
+        setUsers(fetchedUsers);
+      } else {
+        setError(result.message || 'Failed to fetch users.'); // Update to use result.message
+      }
+    } catch (error) {
+      setError('Network error occurred.');
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>; // Ensure error is rendered as a string
 
   return (
     <div className='User__mainContainer'>
