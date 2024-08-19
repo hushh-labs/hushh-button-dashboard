@@ -1,0 +1,59 @@
+.LoginPage__contentContainer {
+  display: flex;
+}
+
+.LoginPage__contentContainer__left {
+  display: flex;
+  flex: 1;
+
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoginPage__contentContainer__left h4{
+    margin-right: 310px;
+    margin-bottom: 50px;
+}
+
+.LoginPage__contentContainer__left__input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+
+.LoginPage__contentContainer__left__input span{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.LoginPage__contentContainer__left__input input{
+    height: 45px;
+    width: 350px;
+    border: 1px solid rgba(102, 102, 102, 0.35);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.LoginPage__contentContainer__left__input button{
+    height: 40px;
+    width: 150px;
+   
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+.LoginPage__contentContainer__right {
+  display: flex;
+  flex: 1;
+  background-color: #d9d9d9;
+}
+
+

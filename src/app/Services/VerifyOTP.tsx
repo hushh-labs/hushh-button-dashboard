@@ -5,7 +5,7 @@ export default async function verifyOTP(email: string, otp:string) {
   try {
     console.log("Email passed to function:", typeof( email));
 
-    const data = qs.stringify({ email: 'sanipatel.off@gmail.com', OTP: otp });
+    const data = qs.stringify({ email: email, OTP: otp });
 
     const response = await axios.post(
       "http://localhost:3001/button-Admin/v1/api/auth/verifyOTP",

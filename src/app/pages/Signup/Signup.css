@@ -176,6 +176,12 @@
     margin-top: 15px;
 }
 
+.Signup__leftContainer__bottom__LoginButton{
+  color :blue;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
 .Signup__rightContainer{
   background-color: #D9D9D9;
 }

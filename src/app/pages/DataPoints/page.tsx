@@ -6,13 +6,17 @@ import "./DataPoints.css";
 import Images from "@/app/Exports/Images";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import qs from 'qs';
+import qs from "qs";
 
 function DataPoints() {
   const router = useRouter();
   const [file, setFile] = useState<File | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [dataPoints, setDataPoints] = useState(null);
+  
+  // Get adminID from localStorage
+  const brandData = JSON.parse(localStorage.getItem("brand"));
+  const brand_id = brandData ? brandData.brand_id : null;
 
   useEffect(() => {
     axios
@@ -41,17 +45,21 @@ function DataPoints() {
   };
 
   const handleButtonSubmit = (dataPointID) => {
-    const adminID = "ce18b7e5-8711-4d02-8400-0ce22198d28e"; // Replace with actual admin ID
+    if (!brand_id) {
+      console.log("Admin ID not found");
+      return;
+    }
 
-    axios.post(
+    axios
+      .post(
         "http://localhost:3001/button-Admin/v1/admin/save-data-points",
         qs.stringify({
           dataPointID,
-          brandID: adminID,
+          brandID: brand_id, // Use the retrieved admin ID
         }),
         {
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
+            "Content-Type": "application/x-www-form-urlencoded",
           },
         }
       )
@@ -125,9 +133,7 @@ function DataPoints() {
                   <p className="dataPoint__description">
                     {dataPoint.data_point_desc}
                   </p>
-                  <button
-                    onClick={() => handleButtonSubmit(dataPoint.id)}
-                  >
+                  <button onClick={() => handleButtonSubmit(dataPoint.id)}>
                     Add
                   </button>
                 </div>

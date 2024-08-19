@@ -18,7 +18,10 @@ function SavedDataPoints() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const brandID = 'ce18b7e5-8711-4d02-8400-0ce22198d28e'; // Replace with the actual brandID
+  // const brandID = 'ce18b7e5-8711-4d02-8400-0ce22198d28e'; // Replace with the actual brandID
+
+  const brand = JSON.parse(localStorage.getItem("brand"));
+  const brandID = brand.brand_id
 
   useEffect(() => {
     axios.post(

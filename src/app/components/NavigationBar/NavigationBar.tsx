@@ -24,8 +24,10 @@ function NavigationBar() {
       }}>
         <img src={Images.dataPointIcon.src} /> <p> Data Points</p>{" "}
       </span>
-      <span>
-        <img src={Images.emailIcon.src} /> <p> Emails</p>{" "}
+      <span onClick={() =>{
+        router.push("/pages/BrandCards")
+      }}>
+        <img src={Images.cardsIcon.src}  className="NavigationBar__mainContainer__cardsIcon" /> <p> Brand Cards</p>{" "}
       </span>
       <span onClick={() => {
         console.log("Button Clicked");

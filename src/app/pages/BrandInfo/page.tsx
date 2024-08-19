@@ -24,6 +24,11 @@ const BrandInfo: React.FC = () => {
     // Define the API endpoint
     const apiEndpoint =
       "http://localhost:3001/button-Admin/v1/admin/add-Brand-Data";
+    
+    // Get admin data from localStorage
+    const admin = JSON.parse(localStorage.getItem("user") || "{}");
+    const adminID = admin.hushh_id;
+    console.log("This is the adminID passed in the API call: ", adminID);
 
     // Define the data to be sent in the request
     const requestData = {
@@ -31,7 +36,7 @@ const BrandInfo: React.FC = () => {
       brand_category: category,       // Match the Supabase field names
       brand_website: brandWebsite,    // Match the Supabase field names
       number_of_members: members,     // Match the Supabase field names
-      admin_id: "49f41d98-066b-45db-95cd-faa0162db2df", // Include the admin_id
+      admin_id: adminID,              // Include the admin_id
     };
 
     try {
@@ -48,8 +53,13 @@ const BrandInfo: React.FC = () => {
 
       // Handle the response
       console.log("Response:", response.data);
+      
       if (response.status === 200) {
-        router.push("/pages/DataPoints"); // Navigate on success
+        // Store brand data in localStorage as a JSON string
+        localStorage.setItem("brand", JSON.stringify(response.data.brand));
+        
+        // Navigate to the DataPoints page on success
+        router.push("/pages/DataPoints");
       }
     } catch (error) {
       // Handle errors

@@ -6,6 +6,7 @@ import OTPScreen from "../pages/OTPScreen/page";
 import BasicInfo from "../pages/BasicInfo/page";
 import BrandInfo from "../pages/BrandInfo/page";
 import DataPoints from "../pages/DataPoints/page";
+import LoginPage from "../pages/Login/page";
 const Pages = {
     RewardsPage,
     Dashboard,
@@ -14,7 +15,8 @@ const Pages = {
     OTPScreen,
     BasicInfo,
     BrandInfo,
-    DataPoints
+    DataPoints,
+    LoginPage
 }
 
 export default Pages;

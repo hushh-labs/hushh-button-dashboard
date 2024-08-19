@@ -6,7 +6,7 @@
 
 .Dashboard__nav {
   width: 250px;
-  height: 100vh;
+  height: 100vh; /* Keep the navigation bar at full viewport height */
   position: fixed;
   top: 0;
   left: 0;
@@ -17,7 +17,7 @@
   width: calc(100% - 250px);
   display: flex;
   flex-direction: column;
-  
+  height: 100vh; /* Make content area the same height as the nav bar */
 }
 
 .Dashboard__header {
@@ -26,7 +26,8 @@
 
 .Dashboard__mainContent {
   padding: 20px;
-  flex: 1; /* Make the main content area fill the available space */
+  flex: 1;
+  overflow-y: auto; /* Allow scrolling if content exceeds the viewport height */
 }
 
 .Dashboard__firstContainer {

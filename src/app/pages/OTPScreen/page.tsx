@@ -22,7 +22,7 @@ function OTPScreen() {
   
     console.log("Entered OTP:", otpString);
   
-    const response = await Services.verifyOTP('sanipatel.off@gmail.com', otpString);
+    const response = await Services.verifyOTP(email, otpString);
     if (response == 1) {
       router.push("/pages/PasswordScreen");
     } else if (response == -1) {

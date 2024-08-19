@@ -80,3 +80,7 @@
     width: 100%;
 }
 
+.NavigationBar__mainContainer__cardsIcon{
+    height: 20px;
+    width: 20px;
+}

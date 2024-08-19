@@ -10,6 +10,8 @@ function PasswordScreen() {
   const [password, setPassword] = useState("");
   const router = useRouter();
   const handlePasswordSubmit = async () => {
+    console.log("This is the password being sent: ", password);
+    
     const response = await Services.createPassword(password);
     if (response == 1) {
       router.push("/pages/BasicInfo");

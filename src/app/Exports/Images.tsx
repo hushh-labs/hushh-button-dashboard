@@ -18,7 +18,8 @@ import searchUserData from '../Assets/Images/SearchUserData.svg'
 import searchQueryTags from '../Assets/Images/SearchQueryTags.svg';
 import googleIcon from '../Assets/Images/GoogleIcon.svg';
 import facebookIcon from '../Assets/Images/FacebookIcon.svg';
-import appleIcon from '../Assets/Images/AppleIcon.svg'
+import appleIcon from '../Assets/Images/AppleIcon.svg';
+import cardsIcon from '../Assets/Images/CardsIcon.svg'
 const Images = {
   notificationIcon,
   notesIcon,
@@ -40,7 +41,8 @@ const Images = {
   searchQueryTags,
   googleIcon,
   facebookIcon,
-  appleIcon
+  appleIcon,
+  cardsIcon
 };
 
 export default Images;

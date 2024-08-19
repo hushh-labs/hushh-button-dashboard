@@ -3,6 +3,8 @@ import axios from "axios";
 export default async function createPassword(password: string) {
   try {
     const email = localStorage.getItem("email");
+    console.log("This is the recieevd password in the  service: ", password);
+    
     const response = await axios.post(
       "http://localhost:3001/button-Admin/v1/api/auth/createPassword",
       { email: email, password: password },

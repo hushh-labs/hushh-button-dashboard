@@ -1,0 +1,35 @@
+.BrandCardsPage__container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .BrandCardsPage__nav {
+    width: 250px;
+    height: 100vh; /* Full viewport height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f4f4f4; /* Optional: Background color for navbar */
+  }
+  
+  .BrandCardsPage__content {
+    margin-left: 250px; /* Adjust for the width of the navbar */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .BrandCardsPage__header {
+    width: calc(100% - 250px); /* Adjust width for content area */
+    height: 60px; /* Set the height of the header */
+  }
+  
+  .BrandCardsPage__mainContent {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    height: calc(100vh - 60px); /* Adjust height based on header height */
+    box-sizing: border-box; /* Include padding in the height calculation */
+  }
+  

@@ -10,13 +10,17 @@ function Signup() {
     router.push("/pages/EmailSignUp"); // Navigate to the EmailSignUp page
   };
 
+  const handleLoginClick =() =>{
+    router.push("/pages/Login");
+  }
+
   return (
     <div className="SignUp__mainContainer">
       <div className="Signup__header">
         <div className="Signup__headerRight"></div>
         <div className="Signup__headerLeft">
           <p>English (United States)</p>
-          <button>Login</button>
+          <button onClick={handleLoginClick}>Login</button>
         </div>
       </div>
       <div className="Signup__content">
@@ -60,6 +64,7 @@ function Signup() {
               <p>Continue With Email</p>
             </span>
           </div>
+          <p>Already Have an account? <span className="Signup__leftContainer__bottom__LoginButton" onClick={handleLoginClick}>Login</span> </p>
           <p className="Signup__leftContainer__bottom_P">
             By signing up, you agree to the Terms of Service and Privacy Policy,
             including cookie use.

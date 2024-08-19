@@ -16,9 +16,10 @@ function RewardsPage() {
     console.log("Hushh Coins:", hushhCoins);
     console.log("Reward Description:", rewardDescription);
     console.log("Reward Option:", rewardOption);
-
+    const brand = JSON.parse(localStorage.getItem("brand"));
+    const brandID = brand.brand_id
     const formData = qs.stringify({
-      brand_id: "ce18b7e5-8711-4d02-8400-0ce22198d28e",
+      brand_id: brandID,
       reward_status: rewardOption,
       reward_coins: rewardAmount,
       imageURL: "",

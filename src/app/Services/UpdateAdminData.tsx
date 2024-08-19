@@ -24,8 +24,9 @@ export default async function updateAdminData(adminData: object) {
       }
     );
 
-    if (response.status === 200) {
-      console.log(response);
+    if (response.status === 200 && response.data.user) {
+      console.log(response.data.user);
+      localStorage.setItem('user', JSON.stringify(response.data.user)); // Store user data in localStorage
       return 1;
     } else {
       return 0;
