@@ -1,45 +1,54 @@
 "use client";
-import React, { useEffect, useState } from 'react';
-import './SavedDataPoints.css';
-import NavigationBar from '@/app/components/NavigationBar/NavigationBar';
-import HeaderBar from '@/app/components/HeaderBar/HeaderBar';
-import axios from 'axios';
-import qs from 'qs';
+import React, { useEffect, useState } from "react";
+import "./SavedDataPoints.css";
+import NavigationBar from "@/app/components/NavigationBar/NavigationBar";
+import HeaderBar from "@/app/components/HeaderBar/HeaderBar";
+import axios from "axios";
+import qs from "qs";
 
 interface DataPoint {
-  id: number; // Use number for the id
+  id: number;
   data_point_title: string;
   data_point_desc: string;
-  // icon?: string; // If you have icons, include this field; otherwise, you can remove it
 }
 
 function SavedDataPoints() {
   const [selectedDataPoints, setSelectedDataPoints] = useState<DataPoint[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  // const brandID = 'ce18b7e5-8711-4d02-8400-0ce22198d28e'; // Replace with the actual brandID
-
-  const brand = JSON.parse(localStorage.getItem("brand"));
-  const brandID = brand.brand_id
+  const [message, setMessage] = useState<string | null>(null); // Updated to handle messages
+  const [brandID, setBrandID] = useState<string | null>(null);
 
   useEffect(() => {
-    axios.post(
-      "http://localhost:3001/button-Admin/v1/admin/get-selected-data-points",
-      qs.stringify({ brandID }),
-      {
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      }
-    )
-    .then((response) => {
-      setSelectedDataPoints(response.data.selected_data_Points);
-      setLoading(false);
-    })
-    .catch((error) => {
-      console.error("Error fetching selected data points:", error);
-      setError("Error fetching data points.");
-      setLoading(false);
-    });
+    const brandData = JSON.parse(localStorage.getItem("brand") || "{}");
+    if (brandData?.brand_id) {
+      setBrandID(brandData.brand_id);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!brandID) return;
+
+    axios
+      .post(
+        "http://localhost:3001/button-Admin/v1/admin/get-selected-data-points",
+        qs.stringify({ brandID }),
+        {
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        }
+      )
+      .then((response) => {
+        if (response.data.status === -1) {
+          setMessage("No data point selected.");
+        } else {
+          setSelectedDataPoints(response.data.selected_data_Points);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching selected data points:", error);
+        setMessage("Error fetching data points.");
+        setLoading(false);
+      });
   }, [brandID]);
 
   return (
@@ -56,16 +65,15 @@ function SavedDataPoints() {
         </div>
         {loading ? (
           <p>Loading...</p>
-        ) : error ? (
-          <p>{error}</p>
+        ) : message ? (
+          <p>{message}</p>
         ) : (
           <div className="dataPoints__grid">
             {selectedDataPoints.length > 0 ? (
               selectedDataPoints.map((dataPoint) => (
                 <div key={dataPoint.id} className="dataPoint__card">
-                  {/* Replace with your default icon if needed */}
                   <img
-                    src={'default-icon.png'} // Use default or remove if not applicable
+                    src={"default-icon.png"} // Use default or remove if not applicable
                     alt={`${dataPoint.data_point_title} icon`}
                     style={{ width: "20px", height: "20px" }}
                   />

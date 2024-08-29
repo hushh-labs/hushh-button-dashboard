@@ -1,0 +1,117 @@
+.address-page-container {
+    padding: 50px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .completion-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .completion-bar__title {
+    font-size: 16px;
+  }
+  
+  .completion-bar__progress {
+    flex: 1;
+    margin: 0 10px;
+    height: 4px;
+    background-color: #f0f0f0;
+    position: relative;
+  }
+  
+  .completion-bar__fill {
+    height: 100%;
+    background-color: #FF0050;
+  }
+  
+  .completion-bar__percentage {
+    font-size: 14px;
+  }
+  
+  .address-page-content {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .address-page-content h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .address-page-content p {
+    color: #888;
+    margin-bottom: 20px;
+  }
+  
+  .address-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .submit-button {
+    background-color: #4C50EA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #1a1aa6;
+  }
+  
+  .skip-button {
+    background-color: transparent;
+    color: #2020ED;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .skip-button:hover {
+    color: #1a1aa6;
+  }
+  
+
+  .address-form1{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  .address-form1 input{
+    width: 420px;
+    height: 53px;
+  }
+
+  .postal-code-input{
+    height: 53px;
+    width: 322px;
+  }

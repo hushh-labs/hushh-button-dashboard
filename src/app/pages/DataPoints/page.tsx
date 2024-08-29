@@ -13,10 +13,14 @@ function DataPoints() {
   const [file, setFile] = useState<File | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [dataPoints, setDataPoints] = useState(null);
-  
-  // Get adminID from localStorage
-  const brandData = JSON.parse(localStorage.getItem("brand"));
-  const brand_id = brandData ? brandData.brand_id : null;
+  const [brandID, setBrandID] = useState<string | null>(null);
+
+  useEffect(() => {
+    const brandData = JSON.parse(localStorage.getItem("brand") || "{}");
+    if (brandData?.brand_id) {
+      setBrandID(brandData.brand_id);
+    }
+  }, []);
 
   useEffect(() => {
     axios
@@ -29,10 +33,6 @@ function DataPoints() {
       });
   }, []);
 
-  useEffect(() => {
-    console.log("These are the fetched data points: ", dataPoints);
-  }, [dataPoints]);
-
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const uploadedFile = event.target.files?.[0];
     if (uploadedFile) {
@@ -44,8 +44,8 @@ function DataPoints() {
     setSearchTerm(event.target.value);
   };
 
-  const handleButtonSubmit = (dataPointID) => {
-    if (!brand_id) {
+  const handleButtonSubmit = (dataPointID: number) => {
+    if (!brandID) {
       console.log("Admin ID not found");
       return;
     }
@@ -55,7 +55,7 @@ function DataPoints() {
         "http://localhost:3001/button-Admin/v1/admin/save-data-points",
         qs.stringify({
           dataPointID,
-          brandID: brand_id, // Use the retrieved admin ID
+          brandID, // Use the retrieved admin ID
         }),
         {
           headers: {
@@ -65,11 +65,9 @@ function DataPoints() {
       )
       .then((response) => {
         console.log("Data point saved successfully:", response.data);
-        // Handle success, maybe display a message or update the UI
       })
       .catch((error) => {
         console.log("Error saving the data point: ", error);
-        // Handle error, maybe display an error message
       });
   };
 
@@ -122,7 +120,7 @@ function DataPoints() {
           <h2>Suggested Data Points</h2>
           <div className="dataPoints__grid">
             {dataPoints ? (
-              dataPoints.map((dataPoint) => (
+              dataPoints.map((dataPoint: any) => (
                 <div key={dataPoint.id} className="dataPoint__card">
                   <img
                     src={Images.contactIcon}

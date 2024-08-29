@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .BrandCardsPage__container {
     display: flex;
     flex-direction: column;
@@ -31,5 +35,55 @@
     overflow-y: auto;
     height: calc(100vh - 60px); /* Adjust height based on header height */
     box-sizing: border-box; /* Include padding in the height calculation */
+  
+  }
+
+  .BrandCardsPage__mainContent__title{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .spanContainer{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 20px;
   }
   
+  .spanContainer input{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  
+  .BrandCardsPage__mainContent__title2{
+    margin-top: 20px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 50px;
+  }
+
+  .BrandCardsPage__saveButton{
+    height: 50px;
+    width: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+   
+  }
+
+  .BrandCardsPage__saveButton:hover{
+    background-color: #f4f4f4;
+  }

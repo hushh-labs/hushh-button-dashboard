@@ -1,15 +1,25 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import qs from "qs";
-import "../Signup/Signup.css";
 import "./LoginPage.css";
+import Images from "@/app/Exports/Images";
 
-function LoginPage() {
+function Login() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const handleContinueWithEmail = () => {
+    router.push("/pages/EmailSignUp");
+  };
+
+  const handleLoginClick = () => {
+    router.push("/pages/Login");
+  };
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -33,8 +43,9 @@ function LoginPage() {
       );
 
       console.log("Login successful:", response.data);
-      localStorage.setItem("user", JSON.stringify(response.data.user))
-      localStorage.setItem("brand", JSON.stringify(response.data.brand))
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+      localStorage.setItem("brand", JSON.stringify(response.data.brand));
+      router.push('/pages/Dashboard');
     } catch (error) {
       console.error("Login failed:", error);
       setError("Login failed. Please check your email and password.");
@@ -44,47 +55,63 @@ function LoginPage() {
   };
 
   return (
-    <div className="LoginPage__mainContainer">
-      <div className="Signup__header">
-        <div className="Signup__headerRight"></div>
-        <div className="Signup__headerLeft">
-          <p>English (United States)</p>
-          <button>Signup</button>
-        </div>
-      </div>
+    <div className="Signup__content">
+      <div className="Signup__leftContainer">
+        <div className="Signup__innerContainer">
+          <img src={Images.hushhLogo.src} alt="" />
+          <h4>Get your Brand Card with hushh</h4>
 
-      <div className="LoginPage__contentContainer">
-        <div className="LoginPage__contentContainer__left">
-          <h4>Login</h4>
-          <form onSubmit={handleLogin} className="LoginPage__contentContainer__left__input">
-            <span>
-              <label>Email</label>
+          <form onSubmit={handleLogin}>
+            <div className="Signup__inputContainer">
+              <label>E-mail or phone number</label>
               <input
                 type="text"
-                placeholder="Email"
+                placeholder="Email or Phone Number"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </span>
-            <span>
+            </div>
+            <div className="Signup__inputContainer">
               <label>Password</label>
               <input
                 type="password"
-                placeholder="Password"
+                placeholder="Type Your Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-            </span>
-            <button type="submit" disabled={loading}>
-              {loading ? "Logging in..." : "Login"}
+              <p>Forgot Password</p>
+            </div>
+            <button type="submit" className="Signup__submitButton" disabled={loading}>
+              {loading ? "Logging in..." : "Sign In"}
             </button>
             {error && <p className="LoginPage__error">{error}</p>}
           </form>
+
+          <div className="Signup__dividerContainer">
+            <div className="Signup__dividerContainer1"></div>
+            <p>or continue with other accounts</p>
+            <div className="Signup__dividerContainer1"></div>
+          </div>
+          <div className="Signup__socialAccounts">
+            <div className="Signup__socialAccountsIcon">
+              <img src={Images.googleIcon.src} alt="Google Icon" />
+            </div>
+            <div className="Signup__socialAccountsIcon">
+              <img src={Images.facebookIcon.src} alt="Facebook Icon" />
+            </div>
+            <div className="Signup__socialAccountsIcon">
+              <img src={Images.appleIcon.src} alt="Apple Icon" />
+            </div>
+          </div>
+          <p className="Signup__footerText">Don not  have an account? Sign up</p>
         </div>
-        <div className="LoginPage__contentContainer__right"></div>
+      </div>
+
+      <div className="Signup__rightContainer">
+        <img src={Images.loginPageImage.src} alt="" />
       </div>
     </div>
   );
 }
 
-export default LoginPage;
+export default Login;
