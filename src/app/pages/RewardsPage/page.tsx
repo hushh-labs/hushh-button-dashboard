@@ -95,7 +95,7 @@ function RewardsPage() {
                   <span>Manual</span>
                   <p>
                     Reward users with credits, discounts, or cashback. Manually
-                    trigger rewards when you're ready.
+                    trigger rewards when you are ready.
                   </p>
                 </div>
               </label>
@@ -111,7 +111,7 @@ function RewardsPage() {
                   <span>Custom</span>
                   <p>
                     Reward users with credits, discounts, or cashback. Manually
-                    trigger rewards when you're ready.
+                    trigger rewards when you are ready.
                   </p>
                 </div>
               </label>

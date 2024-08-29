@@ -24,7 +24,7 @@ function OTPScreen() {
   
     const response = await Services.verifyOTP(email, otpString);
     if (response == 1) {
-      router.push("/pages/PasswordScreen");
+      router.push("/pages/BrandInfo");
     } else if (response == -1) {
       console.log("Incorrect OTP");
     } else {

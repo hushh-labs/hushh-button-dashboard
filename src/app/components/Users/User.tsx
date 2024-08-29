@@ -10,11 +10,16 @@ function User() {
 
   const fetchUsers = async () => {
     try {
-      const brand = JSON.parse(localStorage.getItem("brand"));
+      const brandString = localStorage.getItem("brand");
+      if (!brandString) {
+        throw new Error("No brand information found in localStorage.");
+      }
+      
+      const brand = JSON.parse(brandString);
       const brandID = brand?.brand_id; // Safely access brand_id
       
       const formData = qs.stringify({ brandID });
-
+  
       const response = await fetch('http://localhost:3001/button-Admin/v1/admin/get-users-of-shared-brand', {
         method: 'POST',
         headers: {
@@ -22,29 +27,29 @@ function User() {
         },
         body: formData,
       });
-
+  
       const result = await response.json();
-
+  
       if (response.ok) {
-        // Map API response to the format required by the component
         const fetchedUsers = result.data.map((user: any, index: number) => ({
-          id: index + 1, // Assuming id is auto-generated based on index
+          id: index + 1,
           name: user.from_user_name,
           profileImg: user.from_user_avatar,
-          firstSeen: "N/A", // Replace with actual data if available
-          lastSeen: "N/A", // Replace with actual data if available
+          firstSeen: "N/A",
+          lastSeen: "N/A",
         }));
         setUsers(fetchedUsers);
       } else {
-        setError(result.message || "Failed to fetch users."); // Update to use result.message
+        setError(result.message || "Failed to fetch users.");
       }
-    } catch (error) {
-      setError("Network error occurred.");
+    } catch (error: any) {
+      setError(error.message || "Network error occurred.");
       console.error(error);
     } finally {
       setLoading(false);
     }
   };
+  
 
   useEffect(() => {
     fetchUsers();

@@ -1,7 +1,25 @@
 import React from "react";
 import "./SearchQuery.css";
 
-function SearchQuery({ tags, searchQueries, userQueries }) {
+// Define interfaces for the props
+interface Tag {
+  image: string;
+  name: string;
+}
+
+interface Query {
+  image: string;
+  query: string;
+  usersCount: number;
+}
+
+interface SearchQueryProps {
+  tags: Tag[];
+  searchQueries: Query[];
+  userQueries: Query[];
+}
+
+function SearchQuery({ tags, searchQueries, userQueries }: SearchQueryProps) {
   return (
     <div className="searchQuery__mainContainer">
       <div className="searchQuery__header">
@@ -10,7 +28,6 @@ function SearchQuery({ tags, searchQueries, userQueries }) {
           {tags.map((tag, index) => (
             <div className="tag" key={index}>
               <div className="tag__content">
-                {/* Ensure you access the properties correctly */}
                 <img src={tag.image} alt={tag.name} />
                 <p>{tag.name}</p>
               </div>
@@ -40,7 +57,7 @@ function SearchQuery({ tags, searchQueries, userQueries }) {
             <h4>Search queries by users</h4>
             {userQueries.map((userQuery, index) => (
               <div className="queryItem" key={index}>
-                <img src={userQuery.image} alt={userQuery.user} />
+                <img src={userQuery.image} alt={userQuery.query} />
                 <div className="queryDetails">
                   <span>{userQuery.query}</span>
                   <span>{userQuery.usersCount} users in last 30 days</span>

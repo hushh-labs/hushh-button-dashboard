@@ -108,7 +108,7 @@ const BasicInfo: React.FC = () => {
           />
         </div>
         <div className="form__group">
-          <label>What's your gender? (optional)</label>
+          <label>What is your gender? (optional)</label>
           <div className="gender__options">
             <label>
               <input
@@ -143,7 +143,7 @@ const BasicInfo: React.FC = () => {
           </div>
         </div>
         <div className="form__group">
-          <label>What's your date of birth?</label>
+          <label>What is your date of birth?</label>
           <div className="date__group">
             <div className="date__item">
               <label>Month</label>

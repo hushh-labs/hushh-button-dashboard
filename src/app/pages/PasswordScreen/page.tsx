@@ -14,7 +14,7 @@ function PasswordScreen() {
     
     const response = await Services.createPassword(password);
     if (response == 1) {
-      router.push("/pages/BasicInfo");
+      router.push("/pages/BrandInfo");
     } else {
       console.log("Error Creating User");
     }
