@@ -24,7 +24,12 @@ import loginPageImage from "../Assets/Images/loginPageImage.svg";
 import hushhLogo from "../Assets/Images/hushhLogo.svg";
 import leftContainerLogo from "../Assets/Images/LeftContainerHushhLogo.svg";
 import rightArrow from "../Assets/Images/arrow-right.svg";
-import imageIcon from '../Assets/Images/imageIcon.svg'
+import imageIcon from '../Assets/Images/imageIcon.svg';
+import cardCreationLogo from '../Assets/Images/cardCreationLogo.svg';
+import closingIcon from '../Assets/Images/closingIcon.svg';
+import uploadIcon from '../Assets/Images/uploadIcon.svg';
+import catalogIcon from '../Assets/Images/catalogIcon.svg';
+import productImage from '../Assets/Images/sampleProductImage.svg'
 const Images = {
   notificationIcon,
   notesIcon,
@@ -52,7 +57,12 @@ const Images = {
   hushhLogo,
   leftContainerLogo,
   rightArrow,
-  imageIcon
+  imageIcon,
+  cardCreationLogo,
+  closingIcon,
+  uploadIcon,
+  catalogIcon,
+  productImage
 };
 
 export default Images;

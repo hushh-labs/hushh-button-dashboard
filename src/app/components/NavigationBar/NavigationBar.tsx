@@ -1,69 +1,91 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import "./NavigationBar.css";
 import Images from "@/app/Exports/Images";
 import { useRouter } from "next/navigation";
+import Services from "@/app/Exports/Services";
+
 function NavigationBar() {
   const router = useRouter();
+  const [userImage, setUserImage] = useState<string | null>(null);
+  const [adminName, setAdminName] = useState<string | null>(null);
+  const [brandName, setBrandName] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<string>("Dashboard"); // Default active tab
+
+  useEffect(() => {
+    const fetchUserImage = async () => {
+      const imageUrl = await Services.getAdminPicture();
+      console.log("This is the admin image:", imageUrl);
+      setUserImage(imageUrl); // Update the state with the retrieved image URL
+    };
+
+    fetchUserImage();
+    const email = localStorage.getItem("email");
+    const brandName = localStorage.getItem("brand_name");
+    setAdminName(email);
+    setBrandName(brandName);
+
+    // Set active tab based on URL or default
+    const path = window.location.pathname.split("/").pop();
+    setActiveTab(path || "Dashboard");
+  }, []);
+
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+    router.push(`/pages/${tab}`);
+  };
+
   return (
     <div className="NavigationBar__mainContainer">
-      <div className="NavigationBar__spacingContainer"></div>
-      <span onClick={() =>{
-        router.push("/pages/Dashboard")
-      }}>
-        <img src={Images.dashboardIcon.src} /> <p> Dashboard</p>{" "}
-      </span>
-      <span>
-        <img src={Images.notificationIcon.src} /> <p> Notification</p>{" "}
-      </span>
-      <span>
-        <img src={Images.notesIcon.src} /> <p> Notes</p>{" "}
-      </span>
-      <span onClick={() =>{
-        router.push("/pages/DataPoints")
-      }}>
-        <img src={Images.dataPointIcon.src} /> <p> Data Points</p>{" "}
-      </span>
-      <span onClick={() =>{
-        router.push("/pages/BrandCards")
-      }}>
-        <img src={Images.cardsIcon.src}  className="NavigationBar__mainContainer__cardsIcon" /> <p> Brand Cards</p>{" "}
-      </span>
-      <span onClick={() => {
-        console.log("Button Clicked");
-        
-router.push("/pages/RewardsPage")
-      }}>
-        <img src={Images.calenderIcon.src} /> <p> Rewards</p>{" "}
-      </span>
-      <div className="NavigationBar__lineContainer"></div>
-
-      <div className="NavigationBar__secondContainer">
-        <p className="NavigationBar__title">Database</p>
-        <span>
-        <img src={Images.analyticsIcon.src} /> <p> Calenders</p>{" "}
-      </span>
-      <span>
-        <img src={Images.contactIcon.src} /> <p> Contact</p>{" "}
-      </span>
-      <span>
-        <img src={Images.companyIcon.src} /> <p> Companies</p>{" "}
-      </span>
+      <div className="NavigationBar__spacingContainer">
+        <div>
+          <img src={userImage || ""} alt="Admin Profile" />
+        </div>
+        <div className="NavigationBar__spacingContainer__details">
+          <h4>Test Admin</h4>
+          <p>{brandName}</p>
+        </div>
       </div>
-      <div className="NavigationBar__lineContainer"></div>
-      <span>
-        <img src={Images.integrationIcon.src} /> <p> Integration</p>{" "}
+      <span
+        className={activeTab === "Dashboard" ? "activeTab" : ""}
+        onClick={() => handleTabClick("Dashboard")}
+      >
+        <img src={Images.dashboardIcon.src} /> <p> Dashboard</p>
       </span>
-      <span>
-        <img src={Images.settingIcon.src} /> <p> Integration</p>{" "}
+      <span
+        className={activeTab === "CatalogPage" ? "activeTab" : ""}
+        onClick={() => handleTabClick("CatalogPage")}
+      >
+        <img src={Images.catalogIcon.src} /> <p> Catalog</p>
       </span>
-
-      <div className="NavigationBar__bottomCaontainer">
-      <span>
-        <img src={Images.profileIcon.src} /> <p> Marketing Team</p>{" "}
+      <span
+        className={activeTab === "CardsPage" ? "activeTab" : ""}
+        onClick={() => handleTabClick("CardsPage")}
+      >
+        <img src={Images.notesIcon.src} /> <p> Cards</p>
       </span>
-
-      </div>
+      <span
+        className={activeTab === "DataPoints" ? "activeTab" : ""}
+        onClick={() => handleTabClick("DataPoints")}
+      >
+        <img src={Images.dataPointIcon.src} /> <p> Data Points</p>
+      </span>
+      <span
+        className={activeTab === "BrandCards" ? "activeTab" : ""}
+        onClick={() => handleTabClick("BrandCards")}
+      >
+        <img
+          src={Images.cardsIcon.src}
+          className="NavigationBar__mainContainer__cardsIcon"
+        />{" "}
+        <p> Data Cards</p>
+      </span>
+      <span
+        className={activeTab === "RewardsPage" ? "activeTab" : ""}
+        onClick={() => handleTabClick("RewardsPage")}
+      >
+        <img src={Images.calenderIcon.src} /> <p> Rewards</p>
+      </span>
     </div>
   );
 }

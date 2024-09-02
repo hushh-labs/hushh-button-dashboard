@@ -1,86 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-.NavigationBar__mainContainer{
-    width: 248px;
-    height: 1024px;
-    border-right: 1px solid #F9F9F9;
-    background-color: #F9F9F9;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 25px;
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.NavigationBar__mainContainer {
+  width: 350px;
+  height: 100vh;
+  border-right: 1px solid #f9f9f9;
+  background-color: #F2F4F6FE;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
 }
 
-.NavigationBar__mainContainer span{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    cursor: pointer;
+.NavigationBar__mainContainer span {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  height: 53px; /* Ensure all tabs have a uniform height */
+  padding: 10px;
 }
 
-.NavigationBar__mainContainer span image{
-    height: 20px;
-    width: 20px;
+.NavigationBar__mainContainer span img {
+  height: 20px;
+  width: 20px;
 }
 
 .NavigationBar__mainContainer p {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #727272;
-    size: 14px;
-    line-height: 21px;
-    width: 100px;
+    font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #727272;
+  font-size: 14px;
+  line-height: 21px;
+  width: 120px;
+  font-size: 18.67px;
 }
 
-.NavigationBar__spacingContainer{
-    height: 72px;
-    width: 248px;
-    border-bottom: 1px solid #E4E4E4;
-    margin-bottom: 30px;
+.NavigationBar__spacingContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
 }
 
-.NavigationBar__lineContainer{
-    height: 2px;
-    width: 248px;
-    border-bottom: 1px solid #E4E4E4 ;
-    margin-top: 5px;
+.NavigationBar__spacingContainer img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
 }
 
-.NavigationBar__secondContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
+.NavigationBar__spacingContainer__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 165px;
+  height: 61px;
+  gap: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-top: 10px;
+  font-size: 21px;
 }
 
-.NavigationBar__title{
-    margin-right: 35px;
+.NavigationBar__lineContainer {
+  height: 2px;
+  width: 248px;
+  border-bottom: 1px solid #e4e4e4;
+  margin-top: 5px;
 }
 
-.NavigationBar__bottomCaontainer{
-    height: 72px;
-    width: 248px;
-    border: 1px solid #E4E4E4;
-    margin-top: 208px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.NavigationBar__secondContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
 }
 
-.NavigationBar__bottomCaontainer p{
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: black;
-    width: 100%;
+.NavigationBar__title {
+  margin-right: 35px;
 }
 
-.NavigationBar__mainContainer__cardsIcon{
-    height: 20px;
-    width: 20px;
+.NavigationBar__bottomCaontainer {
+  height: 72px;
+  width: 248px;
+  border: 1px solid #e4e4e4;
+  margin-top: 208px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.NavigationBar__bottomCaontainer p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  width: 100%;
+  font-size: 21px;
+}
+
+.NavigationBar__mainContainer__cardsIcon {
+  height: 20px;
+  width: 20px;
+}
+
+.NavigationBar__mainContainer .activeTab {
+  background: linear-gradient(45deg, #2020ED, #E0055F);
+  border-radius: 5px;
+  width: 325px;
+  height: 53px; /* Matches the height of the other tabs */
+  color: white; /* Ensures text is white */
+}
+
+.NavigationBar__mainContainer .activeTab p,
+.NavigationBar__mainContainer .activeTab img {
+  color: white; /* Set text color to white for active tab */
+  filter: brightness(0) invert(1); /* Inverts the image colors to appear white */
+  font-size: 21px;
 }

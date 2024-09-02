@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.CardCreation__mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.CardCreation__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  font-family: "Poppins", sans-serif;
+  border-bottom: 1px solid #E0E6EE;
+  width: 100vw;
+  padding: 20px;
+}
+
+.CardCreation__header span {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.CardCreation__header h4 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.CardCreation__contentContainer {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.CardCreation__contentContainer__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 87.5vh;
+  font-family: "Figtree", sans-serif;
+  padding: 20px;
+}
+
+.CardCreation__contentContainer__left h4 {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.CardCreation__contentContainer__left__inputContainer{
+    margin-top: 50px;
+}
+
+.CardCreation__contentContainer__right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.CardCreation__contentContainer__right__phoneContainer {
+  height: 650px;
+  width: 350px;
+  border: 5px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.image-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #D0D0D0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 221px;
+  height: 221px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.image-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #6c757d;
+}
+
+.image-upload-label img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.image-upload-label p {
+  margin: 4px 0;
+  font-size: 12px;
+}
+
+.image-preview {
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.Upload__Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.CardCreation__contentContainer__imgInput{
+    margin-top: 10px;
+}
+
+.CardCreation__contentContainer__right__phoneContainer__cardContiner {
+  width: 286px; /* Example width */
+  height: 174px; /* Example height */
+  /* Any other styles you need */
+  margin-top: 25px;
+  position: relative;
+}
+
+.CardCreation__nextButton{
+  height: 50px;
+  width: 150px;
+color: white;
+  border-radius: 5px;
+  background: linear-gradient(45deg, rgba(32, 32, 237, 1) 0%, rgba(224, 5, 95, 1)) 100%;
+
+}
+
+.CardCreation__nextButton__container{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+  
+}
+
+.CardCreation__contentContainer__right__phoneContainer__DescriptionContainer{
+  height: 179px;
+  width: 291px;
+  border: 1px solid rgba(224, 230, 238, 1);
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px;
+}
+.CardCreation__contentContainer__right__phoneContainer__DescriptionContainer p{
+ 
+}

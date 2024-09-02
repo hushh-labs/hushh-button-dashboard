@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.CatalogPage__container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.CatalogPage__nav {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.CatalogPage__content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  margin-left: 100px;
+}
+
+.CatalogPage__HeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+justify-content: space-between;
+  border-bottom: 1px solid rgba(237, 239, 245, 1);
+}
+
+.CatalogPage__HeaderContainer h4 {
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+  font-size: 42px;
+}
+
+.CatalogPage__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.CatalogPage__importButton,
+.CatalogPage__addButton {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.CatalogPage__addButton {
+  background: linear-gradient(45deg, #2020ed, #e0055f);
+}
+
+.CatalogPage__importButton {
+color: rgba(0, 122, 255, 1);}
+
+.CatalogPage__addButton {
+  background-color: #007bff;
+  color: white;
+}
+
+.CatalogPage__filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.CatalogPage__searchInput {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.CatalogPage__dropdowns select {
+  margin-left: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.CatalogPage__mainContent {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.CatalogPage__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.CatalogPage__table th,
+.CatalogPage__table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.CatalogPage__productImage {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.CatalogPage__active {
+  color: green;
+  font-weight: bold;
+}
+
+.CatalogPage__pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CatalogPage__paginationControls {
+  display: flex;
+  gap: 5px;
+}
+
+.td__imageTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.CatalogPage__productTitle {
+  color: rgba(0, 122, 255, 1);
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}

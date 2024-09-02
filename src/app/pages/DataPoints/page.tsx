@@ -81,66 +81,7 @@ function DataPoints() {
       </div>
 
       <main className="datapoints__content">
-        <div className="datapoints__title">
-          <h1>Dashboard</h1>
-          <div className="search__bar">
-            <input
-              type="text"
-              placeholder="Search"
-              value={searchTerm}
-              onChange={handleSearchChange}
-            />
-          </div>
-        </div>
-
-        <section className="upload__section">
-          <h2>Upload Document</h2>
-          <p className="description">
-            Monthly Product Discussion by Design and Marketing Teams with CEO to
-            plan our future product sales and reports.
-          </p>
-          <div className="DataPoints__upload">
-            <label className="upload__button">
-              + Upload your file
-              <input type="file" accept=".csv" onChange={handleFileUpload} />
-            </label>
-            {file && <p>Uploaded file: {file.name}</p>}
-            <label
-              className="upload__button"
-              onClick={() => {
-                router.push("/pages/SavedDataPoints");
-              }}
-            >
-              Saved Data Points
-            </label>
-          </div>
-        </section>
-
-        <section className="suggested__dataPoints">
-          <h2>Suggested Data Points</h2>
-          <div className="dataPoints__grid">
-            {dataPoints ? (
-              dataPoints.map((dataPoint: any) => (
-                <div key={dataPoint.id} className="dataPoint__card">
-                  <img
-                    src={Images.contactIcon}
-                    alt={`${dataPoint.data_point_title} icon`}
-                    style={{ width: "20px", height: "20px" }}
-                  />
-                  <h4>{dataPoint.data_point_title}</h4>
-                  <p className="dataPoint__description">
-                    {dataPoint.data_point_desc}
-                  </p>
-                  <button onClick={() => handleButtonSubmit(dataPoint.id)}>
-                    Add
-                  </button>
-                </div>
-              ))
-            ) : (
-              <p>Loading data points...</p>
-            )}
-          </div>
-        </section>
+        
       </main>
     </div>
   );
